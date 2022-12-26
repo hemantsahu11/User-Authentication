@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--    model_list ListView-->
+  <h1>Welcome to your profile</h1>
+  <h2> Here are your books checked out </h2>
+  {% for book in bookinstance_list %}
+      <p> {{ book }} </p>
+    {% endfor %}
+</body>
+</html>

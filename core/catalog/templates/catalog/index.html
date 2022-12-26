@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1> Home Page </h1>
+    <p> total Books : {{num_books}} </p>
+    <p> Books Available : {{num_instances_avail}} </p>
+
+    {% if user.is_authenticated %}
+        <p> You are logged in</p>
+        <p> Welcome : {{user.get_username }} </p>
+     <a href="{% url 'logout' %}?next={{ request.path }}">Logout</a>  <!-- By using the next we are redirecting user to next it means index page/ home page -->
+    {% else %}
+    <p> You are not logged in </p>
+   <a href="{% url 'login' %}?next={{ request.path }}">Login</a>  <!-- If we do not pass this next then we will redirect to same page  or django defined behavior  -->
+    {% endif %}
+</body>
+</html>
